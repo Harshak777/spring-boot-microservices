@@ -16,14 +16,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sbmicroservies.productservice.dto.ProductRequest;
 import com.sbmicroservies.productservice.repository.ProductRepository;
 
 @SpringBootTest
-@Testcontainers
 @AutoConfigureMockMvc
 class ProductServiceApplicationTests {
 
@@ -35,6 +33,10 @@ class ProductServiceApplicationTests {
 	private ObjectMapper objectMapper;
 	@Autowired
 	private ProductRepository productRepository;
+	
+	static {
+		mongoDBContainer.start();
+	}
 	
 	@DynamicPropertySource
 	static void setProperties(DynamicPropertyRegistry dymDynamicPropertyRegistry) {
