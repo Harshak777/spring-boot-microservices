@@ -1,8 +1,11 @@
 package com.sbmicroservies.productservice.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.sbmicroservies.productservice.dto.ProductRequest;
+import com.sbmicroservies.productservice.dto.ProductResponse;
 import com.sbmicroservies.productservice.model.Product;
 import com.sbmicroservies.productservice.repository.ProductRepository;
 
@@ -24,5 +27,20 @@ public class ProductService {
 		
 		productRepository.save(product);
 		log.info("Product {} saved", product.getId());
+	}
+	
+	public List<ProductResponse> getAllProducts() {
+		List<Product> products = productRepository.findAll();
+		
+		return products.stream().map(product -> mapToProductResponse(product)).toList();
+	}
+	
+	private ProductResponse mapToProductResponse(Product product) {
+		return ProductResponse.builder()
+				.id(product.getId())
+				.name(product.getName())
+				.description(product.getDescription())
+				.price(product.getPrice())
+				.build();
 	}
 }
