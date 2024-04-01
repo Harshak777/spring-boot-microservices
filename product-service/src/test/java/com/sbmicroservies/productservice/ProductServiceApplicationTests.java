@@ -60,5 +60,7 @@ class ProductServiceApplicationTests {
 				.price(BigDecimal.valueOf(1000))
 				.build();
 	}
+	
+	// TODO create tests for other end points
 
 }
