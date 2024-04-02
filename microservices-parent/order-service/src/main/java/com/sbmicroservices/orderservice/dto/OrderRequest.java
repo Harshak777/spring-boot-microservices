@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderRequest {
-	private List<OrderLineItemsDto> orderLineItemsDto;
+	private List<OrderLineItemsDto> orderLineItemsDtoList;
 }
