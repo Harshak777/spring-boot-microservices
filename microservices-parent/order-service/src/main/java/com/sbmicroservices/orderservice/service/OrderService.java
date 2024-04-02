@@ -9,9 +9,15 @@ import com.sbmicroservices.orderservice.dto.OrderLineItemsDto;
 import com.sbmicroservices.orderservice.dto.OrderRequest;
 import com.sbmicroservices.orderservice.model.Order;
 import com.sbmicroservices.orderservice.model.OrderLineItems;
+import com.sbmicroservices.orderservice.repository.OrderRepository;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class OrderService {
+	
+	private final OrderRepository orderRepository;
 	
 	public void placeOrder(OrderRequest orderRequest) {
 		Order order = new Order();
@@ -23,6 +29,8 @@ public class OrderService {
 			.toList();
 		
 		order.setOrderLineItemsList(orderLineItems);
+		
+		orderRepository.save(order);
 	}
 	
 	private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
