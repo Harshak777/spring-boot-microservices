@@ -15,3 +15,7 @@
 <img width="943" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/7a1f9f21-e93d-4897-aeca-823d1a797058">
 
 ## Get initial project data files [spring intilizr](https://start.spring.io)
+
+### Databses used
+* MongoDB - Product Service
+* MySQL - Order & Inventory Services
