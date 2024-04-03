@@ -16,6 +16,6 @@
 
 ## Get initial project data files [spring intilizr](https://start.spring.io)
 
-### Databses used
+## Databses used
 * MongoDB - Product Service
 * MySQL - Order & Inventory Services
