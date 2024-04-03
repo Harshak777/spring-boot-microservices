@@ -19,3 +19,5 @@
 ## Databses used
 * MongoDB - Product Service
 * MySQL - Order & Inventory Services
+
+## Inter Process Communication
