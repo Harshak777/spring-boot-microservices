@@ -21,3 +21,5 @@
 * MySQL - Order & Inventory Services
 
 ## Inter Process Communication
+### Available clients - RestTemplate(in maintainace mode), WebClient(recommended by SpringBoot)
+* Synchronous communication: Inventory Service - Order Service
