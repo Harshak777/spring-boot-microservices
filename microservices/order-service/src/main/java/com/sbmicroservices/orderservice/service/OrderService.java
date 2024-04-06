@@ -13,6 +13,7 @@ import com.sbmicroservices.orderservice.model.OrderLineItems;
 import com.sbmicroservices.orderservice.repository.OrderRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 	
 	private final OrderRepository orderRepository;
+	private final WebClient webClient;
 	
 	public void placeOrder(OrderRequest orderRequest) {
 		Order order = new Order();
@@ -29,10 +31,21 @@ public class OrderService {
 			.stream()
 			.map(orderLineItemsDto -> mapToDto(orderLineItemsDto))
 			.toList();
-		
+
 		order.setOrderLineItemsList(orderLineItems);
-		
-		orderRepository.save(order);
+
+		// Call InventoryService, and place the order if the product is in stock
+		Boolean result = webClient.get()
+				.uri("http://localhost:8082/api/inventory")
+				.retrieve()
+				.bodyToMono(Boolean.class)
+				.block();
+
+		if(Boolean.TRUE.equals(result)) {
+			orderRepository.save(order);
+		} else {
+			throw new IllegalArgumentException("Product not in stock, please try again later.");
+		}
 	}
 	
 	private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
