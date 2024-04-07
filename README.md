@@ -23,3 +23,9 @@
 ## Inter Process Communication
 ### Available clients - RestTemplate(in maintainace mode), WebClient(recommended by SpringBoot)
 * Synchronous communication: Inventory Service - Order Service
+### Service Discovery
+
+<img width="475" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/c0672892-6e77-4944-9f5d-5c792b153ccd"> ----- <img width="475" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/e8a5380f-dcc7-45ef-b390-efa4bac407b0">
+
+<b>Note:</b>
+The Discovery Server will also send back a local registery after the first request, just as a backup if the DS is busy/unavailable.
