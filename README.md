@@ -30,3 +30,8 @@
 <b>Note:</b>
 * The Discovery Server will also send back a local registery after the first request, just as a backup if the DS is busy/unavailable.
 * Once the Discovery Server is running, the metadata could be checked from the Spring Eureka dashboard hosted at `<host>:<port>` (defaultPort = 8761)
+
+## Multiple Service Instances
+To simultaneously run several instances of a same service:
+1) Configure the port in the application.properties, `server.port=0`
+2) Enable multiple instances in run configuration
