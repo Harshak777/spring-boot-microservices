@@ -37,7 +37,7 @@ To simultaneously run several instances of a same service:
 2) Enable multiple instances in run configuration
 
 ## API Gateway - Spring Cloud Gateway
-Implement an API Gateway so that the external user first hits the API Gateway, and which in turn routes the request to the corresponding server.
+Implement an API Gateway so that the external user first hits the API Gateway, and which in turn routes the request to the corresponding server. \
 <b>Advantage:</b>
 - Routing based on Request Headers
 - Authentication
