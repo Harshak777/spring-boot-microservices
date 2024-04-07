@@ -28,4 +28,5 @@
 <img width="475" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/c0672892-6e77-4944-9f5d-5c792b153ccd"> ----- <img width="475" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/e8a5380f-dcc7-45ef-b390-efa4bac407b0">
 
 <b>Note:</b>
-The Discovery Server will also send back a local registery after the first request, just as a backup if the DS is busy/unavailable.
+* The Discovery Server will also send back a local registery after the first request, just as a backup if the DS is busy/unavailable.
+* Once the Discovery Server is running, the metadata could be checked from the Spring Eureka dashboard hosted at `<host>:<port>` (defaultPort = 8761)
