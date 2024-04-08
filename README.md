@@ -44,3 +44,10 @@ Implement an API Gateway so that the external user first hits the API Gateway, a
 - Security
 - Load balancing
 - SSL Termination
+
+## Spring Security integrating with KeyCloak
+Since this is a server authentication Create Client with:
+  -  StandardFlow: Disabled
+  -  AccessType: Confidential
+  -  Direct Access Grants: Disabled
+  -  Service Accounts: Enabled
