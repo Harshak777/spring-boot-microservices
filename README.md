@@ -51,3 +51,16 @@ Since this is a server authentication Create Client with:
   -  AccessType: Confidential
   -  Direct Access Grants: Disabled
   -  Service Accounts: Enabled
+
+## Spring Cloud Circuit Breaker intergrating with Resilience4J
+circuit lifecycle: \
+<img width="500" alt="image" src="https://github.com/Harshak777/spring-boot-microservices/assets/33751325/9e2855fe-1113-4da9-972b-2799f27d11c2">
+
+configurations for actuators
+```
+management.health.circuitbreakers.enabled=true
+management.endpoints.web.exposure.inclue=*
+management.endpoint.health.show-details=always
+```
+
+Configure Resilience4j properties as well
