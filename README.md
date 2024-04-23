@@ -62,5 +62,9 @@ management.health.circuitbreakers.enabled=true
 management.endpoints.web.exposure.inclue=*
 management.endpoint.health.show-details=always
 ```
-
 Configure Resilience4j properties as well
+
+## Distributed Tracing - Spring Cloud Sleuth and Zipkin(Visualize the stack trace)
+## Logging using Prometheus and visualization using Grafana
+
+
